@@ -99,12 +99,21 @@ async def downloads(driver, title, navigation):
             await downloadVideo(videoURL, filePath)
     return
 
+def makeDownloadDirectory():
+    try:
+        os.mkdir(downloadFolder)
+    except:
+        print("Already created download directory")
+    return
+
 async def getDownloads():
+    makeDownloadDirectory()
+    
     driver = webdriver.Firefox()
     await loginLinkedin(driver)
 
     while "checkpoint" in driver.current_url:
-        await asyncio.sleep(1)
+        await asyncio.sleep(1)    
         
     for url in learningURLs:
         learningURL = url.replace('autoplay=true', 'autoplay=false')
