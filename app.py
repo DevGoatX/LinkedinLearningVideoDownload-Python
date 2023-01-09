@@ -18,7 +18,6 @@ all the links and then download videos.
 downloadFolder = 'download'
 linkedInUrl = 'https://linkedin.com'
 learningURLs = [
-    'https://www.linkedin.com/learning/learning-solidworks-pcb/welcome?autoplay=true'
 ]
   
 async def downloadVideo(videoLink, filePath):   
