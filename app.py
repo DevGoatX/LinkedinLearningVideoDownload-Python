@@ -18,6 +18,7 @@ all the links and then download videos.
 downloadFolder = 'download'
 linkedInUrl = 'https://linkedin.com'
 learningURLs = [
+    'https://www.linkedin.com/learning/learning-solidworks-pcb/welcome?autoplay=true'
 ]
   
 async def downloadVideo(videoLink, filePath):   
@@ -105,7 +106,8 @@ async def getDownloads():
     while "checkpoint" in driver.current_url:
         await asyncio.sleep(1)
         
-    for learningURL in learningURLs:
+    for url in learningURLs:
+        learningURL = url.replace('autoplay=true', 'autoplay=false')
         driver.get(learningURL)
         await asyncio.sleep(5)
 
