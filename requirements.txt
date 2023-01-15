@@ -1,0 +1,4 @@
+requests
+load-dotenv
+asyncio
+selenium
